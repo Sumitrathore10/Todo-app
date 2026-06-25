@@ -1,14 +1,12 @@
 import React from 'react';
 import Nav from './Nav';
-import Signup from './Signup.jsx';
-import Login from './Login.jsx';
+
 const App = () => {
   return (
-    <div className='w-full h-screen flex flex-col items-center'>
+    <div className='min-h-screen min-w-full bg-slate-50 text-slate-900'>
       <Nav />
-     
     </div>
-  )
-}
+  );
+};
 
 export default App

@@ -22,16 +22,10 @@ app.use(cors({
 }))
 
 
-app.use('/api/v1/user',router)
-app.use('/api/v1/user',router)
-app.use('/api/v1/user',router)
+app.use('/api/v1/user', router);
+app.use('/api/v1/todo', todoRouter);
 
-app.use('/api/v1/todo',todoRouter)
-app.use('/api/v1/todo',todoRouter)
-app.use('/api/v1/todo',todoRouter)
-app.use('/api/v1/todo',todoRouter)
-
-const PORT = process.env.PORT || 3000
-app.listen(PORT,()=>{
-    console.log(`Server is running on port http://localhost:${PORT}`);
-})
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port http://localhost:${PORT}`);
+});
