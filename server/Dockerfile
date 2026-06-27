@@ -4,7 +4,7 @@ LABEL maintainer="Sumit Rathore <srathore132005@gmail.com>"
 
 WORKDIR /app
 
-COPY package*.json ./ 
+COPY package*.json ./
 
 RUN npm install
 
@@ -16,7 +16,6 @@ WORKDIR /app
 
 COPY --from=build /app /app
 
-EXPOSE 5173
+EXPOSE 8000
 
-ENTRYPOINT ["npm", "run", "dev"]
-
+ENTRYPOINT ["npm" , "start"]
