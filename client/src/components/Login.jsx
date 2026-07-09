@@ -30,54 +30,55 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 px-4 py-12 text-slate-900">
-      <div className="mx-auto flex w-full max-w-lg flex-col gap-8 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-xl shadow-slate-300/20">
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black px-4 py-12 text-white">
+      <div className="mx-auto flex w-full max-w-lg flex-col gap-8 rounded-2xl border border-gray-800 bg-gray-950 p-8 shadow-xl shadow-black/50">
         <div className="space-y-3 text-center">
-          <p className="text-sm uppercase tracking-[0.24em] text-sky-700">Welcome back</p>
-          <h1 className="text-4xl font-semibold text-slate-900">Sign in to your account</h1>
-          <p className="text-slate-600">Access your tasks and keep your day organized with ease.</p>
+          <p className="text-sm uppercase tracking-[0.24em] text-gray-500">Welcome back</p>
+          <h1 className="text-4xl font-semibold text-white">Sign in to your account</h1>
+          <p className="text-gray-400">Access your tasks and keep your day organized with ease.</p>
         </div>
 
         {error && (
-          <div className="rounded-3xl border border-rose-100 bg-rose-50 px-4 py-3 text-sm text-rose-700">
+          <div className="rounded-xl border border-red-900/50 bg-red-950/20 px-4 py-3 text-sm text-red-400">
             {error}
           </div>
         )}
 
         <form onSubmit={handleSubmit} className="grid gap-4">
-          <label className="space-y-2 text-sm text-slate-700">
+          <label className="space-y-2 text-sm text-gray-300">
             Email
             <input
               type="email"
               placeholder="you@example.com"
               value={data.email}
-              className="w-full rounded-[1.5rem] border border-slate-200 bg-slate-100 px-4 py-3 text-slate-900 outline-none placeholder:text-slate-400 focus:border-sky-500 focus:ring-2 focus:ring-sky-500/10"
+              className="w-full rounded-lg border border-gray-700 bg-gray-800 px-4 py-3 text-white outline-none placeholder:text-gray-600 focus:border-gray-600 focus:ring-2 focus:ring-gray-700/50"
               onChange={(e) => setData({ ...data, email: e.target.value })}
               required
             />
           </label>
-          <label className="space-y-2 text-sm text-slate-700">
+          <label className="space-y-2 text-sm text-gray-300">
             Password
             <input
               type="password"
               placeholder="Enter your password"
               value={data.password}
-              className="w-full rounded-[1.5rem] border border-slate-200 bg-slate-100 px-4 py-3 text-slate-900 outline-none placeholder:text-slate-400 focus:border-sky-500 focus:ring-2 focus:ring-sky-500/10"
+              autoComplete="current-password"
+              className="w-full rounded-lg border border-gray-700 bg-gray-800 px-4 py-3 text-white outline-none placeholder:text-gray-600 focus:border-gray-600 focus:ring-2 focus:ring-gray-700/50"
               onChange={(e) => setData({ ...data, password: e.target.value })}
               required
             />
           </label>
           <button
             type="submit"
-            className="mt-2 rounded-full bg-sky-600 px-6 py-3 text-base font-semibold text-white transition hover:bg-sky-500"
+            className="mt-2 rounded-lg bg-gray-800 border border-gray-700 px-6 py-3 text-base font-semibold text-white transition hover:bg-gray-700 hover:border-gray-600"
           >
             Login
           </button>
         </form>
 
-        <p className="text-center text-sm text-slate-500">
+        <p className="text-center text-sm text-gray-400">
           Don&apos;t have an account?{' '}
-          <Link className="text-sky-700 font-semibold hover:text-sky-900" to="/register">
+          <Link className="text-white font-semibold hover:text-gray-300" to="/register">
             Sign up
           </Link>
         </p>

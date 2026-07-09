@@ -14,6 +14,8 @@ FROM node:22.17.0-slim AS production
 
 WORKDIR /app
 
+COPY --from=build /app/node_modules /app/node_modules
+COPY --from=build /app/package*.json /app/package*.json
 COPY --from=build /app /app
 
 EXPOSE 8000

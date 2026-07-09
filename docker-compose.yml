@@ -13,18 +13,8 @@ services:
       - "8000:8000"
     networks: 
       - mern
-    depends_on:
-      - database
-  database:
-    image: mongo:latest
-    container_name: mongodb
-    ports:
-      - "27017:27017"
-    networks:
-      - mern
-    volumes:
-      - data:/data/db
-
+    
+  
 networks:
   mern: 
     driver: bridge
