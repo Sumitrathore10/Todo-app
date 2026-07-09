@@ -13,6 +13,8 @@ services:
       - "8000:8000"
     networks: 
       - mern
+    .env_file:
+      - ./server/.env
     
   
 networks:
