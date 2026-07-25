@@ -4,16 +4,16 @@ services:
   client:
     build: ./client
     ports:
-      - "5173:5173"
+      - "80"
     networks:
       - mern
   server:
     build: ./server
     ports:
-      - "8000:8000"
+      - "8000"
     networks: 
       - mern
-    .env_file:
+    env_file:
       - ./server/.env
     
   
